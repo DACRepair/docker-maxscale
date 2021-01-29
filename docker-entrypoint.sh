@@ -34,13 +34,13 @@ router_options=$ROUTER_OPTIONS
 servers=${BACKEND_SERVER_LIST// /,}
 connection_timeout=$CONNECTION_TIMEOUT
 user=$MAX_USER
-passwd=$MAX_PASS
+password=$MAX_PASS
 enable_root_user=$ENABLE_ROOT_USER
 
 [GaleraListener]
 type=listener
 service=GaleraService
-protocol=MySQLClient
+protocol=mariadbclient
 port=$ROUTER_PORT
 
 [SplitterService]
@@ -49,14 +49,14 @@ router=readwritesplit
 servers=${BACKEND_SERVER_LIST// /,}
 connection_timeout=$CONNECTION_TIMEOUT
 user=$MAX_USER
-passwd=$MAX_PASS
+password=$MAX_PASS
 enable_root_user=$ENABLE_ROOT_USER
 use_sql_variables_in=$USE_SQL_VARIABLES_IN
 
 [SplitterListener]
 type=listener
 service=SplitterService
-protocol=MySQLClient
+protocol=mariadbclient
 port=$SPLITTER_PORT
 
 [GaleraMonitor]
@@ -65,17 +65,17 @@ module=galeramon
 servers=${BACKEND_SERVER_LIST// /,}
 disable_master_failback=1
 user=$MAX_USER
-passwd=$MAX_PASS
+password=$MAX_PASS
 
-[CLI]
-type=service
-router=cli
+#[CLI]
+#type=service
+#router=cli
 
-[CLIListener]
-type=listener
-service=CLI
-protocol=maxscaled
-port=6603
+#[CLIListener]
+#type=listener
+#service=CLI
+#protocol=maxscaled
+#port=6603
 
 # Start the Server block
 EOF
