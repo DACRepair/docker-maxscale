@@ -16,7 +16,12 @@ ENV MAX_THREADS=4 \
     PERSIST_MAXTIME=3600 \
     BACKEND_SERVER_LIST="server1 server2 server3" \
     BACKEND_SERVER_PORT="3306" \
-    USE_SQL_VARIABLES_IN="all"
+    USE_SQL_VARIABLES_IN="all" \
+    ADMIN_ENABLED="false" \
+    ADMIN_HOST="127.0.0.1" \
+    ADMIN_PORT="8989" \
+    ADMIN_GUI="false" \
+    ADMIN_SECURE_GUI="true"
 
 # We copy our config creator script to the container
 COPY docker-entrypoint.sh /
