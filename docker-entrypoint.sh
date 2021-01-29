@@ -22,6 +22,12 @@ cat <<EOF > $config_file
 [maxscale]
 threads=$MAX_THREADS
 
+admin_enabled = $ADMIN_ENABLED
+admin_host = $ADMIN_HOST
+admin_port = $ADMIN_PORT
+admin_gui = $ADMIN_GUI
+admin_secure_gui = $ADMIN_SECURE_GUI
+
 [Galera Service]
 type=service
 router=readconnroute
