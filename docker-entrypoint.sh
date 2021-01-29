@@ -27,7 +27,7 @@ admin_port = $ADMIN_PORT
 admin_gui = $ADMIN_GUI
 admin_secure_gui = $ADMIN_SECURE_GUI
 
-[Galera Service]
+[GaleraService]
 type=service
 router=readconnroute
 router_options=$ROUTER_OPTIONS
@@ -37,13 +37,13 @@ user=$MAX_USER
 passwd=$MAX_PASS
 enable_root_user=$ENABLE_ROOT_USER
 
-[Galera Listener]
+[GaleraListener]
 type=listener
-service=Galera Service
+service=GaleraService
 protocol=MySQLClient
 port=$ROUTER_PORT
 
-[Splitter Service]
+[SplitterService]
 type=service
 router=readwritesplit
 servers=${BACKEND_SERVER_LIST// /,}
@@ -53,9 +53,9 @@ passwd=$MAX_PASS
 enable_root_user=$ENABLE_ROOT_USER
 use_sql_variables_in=$USE_SQL_VARIABLES_IN
 
-[Splitter Listener]
+[SplitterListener]
 type=listener
-service=Splitter Service
+service=SplitterService
 protocol=MySQLClient
 port=$SPLITTER_PORT
 
