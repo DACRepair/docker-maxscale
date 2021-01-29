@@ -94,7 +94,7 @@ persistmaxtime=$PERSIST_MAXTIME
 EOF
 
 done
-
+chown maxscale:maxscale $config_file
 
 exec "$@"
 
