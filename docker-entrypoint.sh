@@ -21,7 +21,6 @@ config_file="/etc/maxscale.cnf"
 cat <<EOF > $config_file
 [maxscale]
 threads=$MAX_THREADS
-
 admin_enabled = $ADMIN_ENABLED
 admin_host = $ADMIN_HOST
 admin_port = $ADMIN_PORT
@@ -31,7 +30,7 @@ admin_secure_gui = $ADMIN_SECURE_GUI
 [Galera Service]
 type=service
 router=readconnroute
-router_options=synced
+router_options=$ROUTER_OPTIONS
 servers=${BACKEND_SERVER_LIST// /,}
 connection_timeout=$CONNECTION_TIMEOUT
 user=$MAX_USER
@@ -94,7 +93,7 @@ persistmaxtime=$PERSIST_MAXTIME
 EOF
 
 done
-chown maxscale:maxscale $config_file
 
+chown maxscale:maxscale $config_file
 exec "$@"
 
