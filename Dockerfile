@@ -27,10 +27,10 @@ ENV MAX_THREADS=4 \
 COPY docker-entrypoint.sh /
 
 # We expose our set Listener Ports
-EXPOSE $SPLITTER_PORT $ROUTER_PORT $CLI_PORT
+EXPOSE $SPLITTER_PORT $ROUTER_PORT $CLI_PORT $ADMIN_PORT
 
 # We define the config creator as entrypoint
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 # We startup MaxScale as default command
-CMD ["/usr/bin/maxscale","--nodaemon"]
+CMD ["maxscale", "-d", "-U", "maxscale", "-l", "stdout"]
