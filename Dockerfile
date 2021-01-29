@@ -17,6 +17,7 @@ ENV MAX_THREADS=4 \
     BACKEND_SERVER_LIST="server1 server2 server3" \
     BACKEND_SERVER_PORT="3306" \
     USE_SQL_VARIABLES_IN="all" \
+    ROUTER_OPTIONS="synced" \
     ADMIN_ENABLED="false" \
     ADMIN_HOST="127.0.0.1" \
     ADMIN_PORT="8989" \
