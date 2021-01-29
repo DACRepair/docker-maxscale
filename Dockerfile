@@ -1,5 +1,5 @@
 FROM mariadb/maxscale:2.5.7
-MAINTAINER toughiq@gmail.com
+MAINTAINER dacrepair@gmail.com
 
 # Setup for Galera Service (GS), not for Master-Slave environments
 
