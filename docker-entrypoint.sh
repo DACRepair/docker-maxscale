@@ -59,7 +59,7 @@ service=SplitterService
 protocol=MySQLClient
 port=$SPLITTER_PORT
 
-[Galera Monitor]
+[GaleraMonitor]
 type=monitor
 module=galeramon
 servers=${BACKEND_SERVER_LIST// /,}
@@ -70,7 +70,8 @@ passwd=$MAX_PASS
 [CLI]
 type=service
 router=cli
-[CLI Listener]
+
+[CLIListener]
 type=listener
 service=CLI
 protocol=maxscaled
